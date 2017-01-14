@@ -1,6 +1,4 @@
 :global {
-  @import 'vendor/normalize';
-
   html {
     box-sizing: border-box;
   }
@@ -10,11 +8,17 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #eaeaea;
   }
 
   *,
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+
+  .appHeader {
+    font-family: 'Lobster', cursive;
+    margin: 25px 0;
   }
 }

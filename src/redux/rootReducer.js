@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import { routeReducer as router } from 'react-router-redux'
-import counter from './modules/counter'
+import { reducer as formReducer } from 'redux-form'
+import notes from './modules/notes'
 
 export default combineReducers({
-  counter,
-  router
+  notes,
+  router,
+  form: formReducer
 })

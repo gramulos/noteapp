@@ -1,12 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <title>React Redux Starter Kit</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <title>NotesApp</title>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <meta name="title" content="NotesApp">
+  <meta name="description" content="NotesApp, keep your notes online">
+  <meta name="keywords" content="NotesApp, notes, online">
+  <meta content="NotesApp" property="og:title">
+  <meta content="NotesApp, keep your notes online" property="og:description">
+  <meta content="article" property="og:type">
+  <meta content="http://localhost:3000/" property="og:url">
+  <meta content="NotesApp" property="og:site_name">
+  <meta content="Azer Safarov" property="article:publisher">
+  <meta content="http://localhost:3000/img/notesAppBanner.jpg" property="og:image">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="@gramulos" name="twitter:site">
+  <meta content="http://localhost:3000/img/notesAppBanner.jpg" name="twitter:image">
+  <meta content="NotesApp, notes, online" property="news_keywords">
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'/>
+  <link href='./css/bootstrap.min.css' rel='stylesheet'/>
 </head>
-<body>
-  <div id="root" style="height: 100%"></div>
+<body style='display: none'>
+  <div id='root' style='height: 100%'></div>
+  <script>
+    $(window).load(function () {
+      $('body').fadeIn(1000);
+    })
+  </script>
 </body>
 </html>

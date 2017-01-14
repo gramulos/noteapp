@@ -1,0 +1,23 @@
+.color {
+  width: 26px;
+  height: 26px;
+  float: left;
+  margin: 3px;
+  border-radius: 50%;
+  opacity: 0.8;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.selectedColor {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBvcGFjaXR5PSIuNTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgaGVpZ2h0PSIxOHB4IiB3aWR0aD0iMThweCIgdmlld0JveD0iMCAwIDE4IDE4IiBmaWxsPSIjMDAwMDAwIj4KIDxwYXRoIGQ9Im0wIDBoMTh2MThoLTE4eiIgZmlsbD0ibm9uZSIvPgogPHBhdGggZD0ibTYuNjEgMTEuODlsLTMuMTEtMy4xMS0xLjA2IDEuMDYgNC4xNyA0LjE2IDguOTUtOC45NS0xLjA2LTEuMDV6Ii8+Cjwvc3ZnPgo=);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.color:hover {
+  opacity: 1;
+  border-color: rgba(0, 0, 0, 0.4);
+}
