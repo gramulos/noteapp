@@ -7,6 +7,8 @@ const ACTION_HANDLERS = {}
 // GET_SETTINGS
 // ------------------------------------
 export const GET_SETTINGS = 'GET_SETTINGS'
+export const GET_NOTES = 'GET_NOTES'
+export const ADD_NOTE = 'ADD_NOTE'
 
 export const getSettings = () => {
   return {
@@ -15,10 +17,41 @@ export const getSettings = () => {
   }
 }
 
+export const getNotes = () => {
+  return {
+    type: GET_NOTES
+  }
+}
+
+export const addNote = (note) => {
+  return {
+    type: ADD_NOTE,
+    payload: note
+  }
+}
+
 Object.assign(ACTION_HANDLERS, {
   [GET_SETTINGS]: (state, { payload }) => {
+    const userNotes = localStorage.getItem('userNotes')
+    if (!userNotes) {
+      localStorage.setItem('userNotes', JSON.stringify(payload.defaultNotes))
+    }
     return state
       .set('colors', fromJS(payload.colors))
+  },
+
+  [GET_NOTES]: (state) => {
+    const userNotes = JSON.parse(localStorage.getItem('userNotes'))
+    return state
+      .set('notes', fromJS(userNotes))
+  },
+
+  [ADD_NOTE]: (state, { payload }) => {
+    const userNotes = JSON.parse(localStorage.getItem('userNotes'))
+    userNotes.push(payload)
+    localStorage.setItem('userNotes', JSON.stringify(userNotes))
+    return state
+      .update('notes', notes => notes.push(fromJS(payload)))
   }
 })
 

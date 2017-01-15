@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { reduxForm } from 'redux-form'
-import { getSettings } from '../../redux/modules/notes'
+import { getSettings, addNote } from '../../redux/modules/notes'
 import { Color } from '../../components'
 import Styles from './noteInput.scss'
 
@@ -10,10 +10,10 @@ class NoteInput extends Component {
     this.props.getSettings()
   }
   render () {
-    const { fields: { text, noteColor }, colors } = this.props
+    const { fields: { text, noteColor }, colors, addNote } = this.props
     return (
       <div className='row'>
-        <div className='col-md-10 col-md-offset-1'>
+        <div className='col-sm-10 col-sm-offset-1'>
           <div className={Styles.noteInput}>
             <textarea placeholder='Enter your note here...' {...text}></textarea>
             {colors && <div className={Styles.colors}>
@@ -24,6 +24,10 @@ class NoteInput extends Component {
                                                    noteColor.onChange(color)
                                                  }}/>)}
             </div>}
+            <button type='button' className='btn btn-success pull-right' onClick={() => addNote({
+              text: text.value,
+              color: noteColor.value
+            })}>Add</button>
           </div>
         </div>
       </div>
@@ -34,6 +38,7 @@ class NoteInput extends Component {
 NoteInput.propTypes = {
   getSettings: PropTypes.func.isRequired,
   fields: PropTypes.object.isRequired,
+  addNote: PropTypes.func.isRequired,
   colors: PropTypes.object
 }
 
@@ -42,7 +47,7 @@ const mapStateToProps = ({notes}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getSettings }, dispatch)
+  return bindActionCreators({ getSettings, addNote }, dispatch)
 }
 
 export default reduxForm({
