@@ -1,14 +1,16 @@
-React Redux Starter Kit
+Notes App
 =======================
-
 [![Build Status](https://travis-ci.org/davezuko/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/davezuko/react-redux-starter-kit?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-> ### This Project Recently Upgraded to Babel 6!
-> Woohoo! If you'd like to try it out, you're welcome to build directly from the master branch. However, if troubleshooting issues with Babel isn't quite your thing, just pull the [stable v0.18.0 release](https://github.com/davezuko/react-redux-starter-kit/tree/v0.18.0) and continue on your way with Babel 5.
+This is a slimple app for managing notes and is created on the base of davezuko/react-redux-starter-kit.
+![Notes app image](src/static/img/notesAppBanner.jpg?raw=true "Optional Title")
 
-> ### Want Semicolons?
-> After installing npm dependencies, open `.eslintrc`, change the `semi` rule from `never` to `always`, and then run `npm run lint:fix` -- Easy as that! Alternatively, use the same npm script after installing and extending your preferred ESLint configuration; it's easy to customize the project's code style to suit your team's needs. See, we can coexist peacefully.
+## Live demo:
+[Demo](http://notes.azersafarov.com/)
+
+About starter kit
+=======================
 
 This starter kit is designed to get you up and running with a bunch of awesome new front-end technologies, all on top of a configurable, feature-rich webpack build system that's already setup to provide hot reloading, CSS modules with Sass support, unit testing, code coverage reports, bundle splitting, and a whole lot more.
 
