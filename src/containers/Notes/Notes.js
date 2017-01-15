@@ -12,14 +12,22 @@ class Notes extends Component {
   }
   render () {
     const { notes } = this.props
-    return (
-      <Mansory className={Styles.notes}
-               options={masonryOptions}>
-         {notes && notes.toJS().map((note, index) => <Note color={note.color}
-                                                           text={note.text}
-                                                           key={'nt_' + index}/>)}
-      </Mansory>
-    )
+    if (notes && notes.size > 0) {
+      return (
+        <Mansory className={Styles.notes}
+                 options={masonryOptions}>
+           {notes && notes.toJS().reverse().map((note, index) => <Note color={note.color}
+                                                             text={note.text}
+                                                             key={'nt_' + index}/>)}
+        </Mansory>
+      )
+    } else {
+      return (
+        <div className='row'>
+          <h2 className={Styles.noNotes}>You don't add any notes. So, add your first note :)</h2>
+        </div>
+      )
+    }
   }
 }
 

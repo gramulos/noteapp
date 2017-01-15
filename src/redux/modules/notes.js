@@ -32,10 +32,6 @@ export const addNote = (note) => {
 
 Object.assign(ACTION_HANDLERS, {
   [GET_SETTINGS]: (state, { payload }) => {
-    const userNotes = localStorage.getItem('userNotes')
-    if (!userNotes) {
-      localStorage.setItem('userNotes', JSON.stringify(payload.defaultNotes))
-    }
     return state
       .set('colors', fromJS(payload.colors))
   },

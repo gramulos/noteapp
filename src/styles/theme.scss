@@ -29,4 +29,18 @@
     background-color: #51c46f;
     border-color: #5ba564;
   }
+
+  @media screen and (min-width: 320px) {
+    .btn {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 425px) {
+    .btn {
+      margin-top: 0;
+      width: initial;
+    }
+  }
 }
