@@ -30,6 +30,8 @@
     border-color: #5ba564;
   }
 
+
+
   @media screen and (min-width: 320px) {
     .btn {
       margin-top: 10px;
@@ -41,6 +43,12 @@
     .btn {
       margin-top: 0;
       width: initial;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .col-sm-4 {
+      width: 100%;
     }
   }
 }

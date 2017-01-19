@@ -43,7 +43,8 @@ Object.assign(ACTION_HANDLERS, {
   },
 
   [ADD_NOTE]: (state, { payload }) => {
-    const userNotes = JSON.parse(localStorage.getItem('userNotes'))
+    const storageData = localStorage.getItem('userNotes')
+    const userNotes = storageData ? JSON.parse(storageData) : []
     userNotes.push(payload)
     localStorage.setItem('userNotes', JSON.stringify(userNotes))
     return state
