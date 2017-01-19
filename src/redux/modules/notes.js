@@ -37,14 +37,15 @@ Object.assign(ACTION_HANDLERS, {
   },
 
   [GET_NOTES]: (state) => {
-    const userNotes = JSON.parse(localStorage.getItem('userNotes'))
+    const storageData = localStorage.getItem('userNotes')
+    const userNotes = storageData ? JSON.parse(localStorage.getItem('userNotes')) : []
+    if (!storageData) localStorage.setItem('userNotes', JSON.stringify([]))
     return state
       .set('notes', fromJS(userNotes))
   },
 
   [ADD_NOTE]: (state, { payload }) => {
-    const storageData = localStorage.getItem('userNotes')
-    const userNotes = storageData ? JSON.parse(storageData) : []
+    const userNotes = JSON.parse(localStorage.getItem('userNotes'))
     userNotes.push(payload)
     localStorage.setItem('userNotes', JSON.stringify(userNotes))
     return state
@@ -57,7 +58,8 @@ Object.assign(ACTION_HANDLERS, {
 // ------------------------------------
 
 const initialState = fromJS({
-  isLoading: false
+  isLoading: false,
+  notes: []
 })
 
 export default function registrationReducer (state, action) {
